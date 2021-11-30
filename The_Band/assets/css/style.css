@@ -18,7 +18,17 @@
     margin-left: -8px;
     margin-right:-8px;
 }
-
+.row::after{
+    content:"";
+    display: block;
+    clear: both;
+}
+.mt-8{
+    margin-top: 8px!important;
+}
+.mt-16{
+    margin-top: 16px!important;
+}
 .col{
     float: left;
     padding-left: 8px;
@@ -29,6 +39,9 @@
 }
 .col-half{
     width: 50%;
+}
+.col-full{
+    width: 100%;
 }
 html {
     font-family: "Lato", sans-serif;
@@ -343,6 +356,39 @@ html {
 .modal-footer{
     padding:0px 16px 16px 16px;
     text-align: right;
+}
+
+
+
+/* Contact format */
+.contact-content{
+    margin-top: 48px;
+}
+.contact-info{
+    font-size: 18px;
+    line-height: 1.5;
+}
+.contact-info i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-form{
+    font-size: 15px;
+}
+.contact-form .form-control{
+    width:100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+.contact-form .form-submit{
+    font-size: 15px;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+    padding: 9px 14px;
+    outline: none;
+    float:right;
 }
 @keyframes modalFadeIn {
     from {
