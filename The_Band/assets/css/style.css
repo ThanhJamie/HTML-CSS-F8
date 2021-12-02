@@ -82,6 +82,7 @@ html {
     left: 0;
     right: 0;
     z-index: 1;
+    overflow: hidden;
 }
 
 #nav > li {
@@ -137,13 +138,21 @@ html {
 }
 
 #header .search-btn:hover {
-    background-color: orangered;
+    background-color: orangered; 
 }
+#header .mobile-menu-btn,
 #header .search-btn {
     float: right;
     padding: 0 21px;
     cursor: pointer;
 }
+#header .mobile-menu-btn:hover{
+    background-color:#ccc;
+}
+#header .mobile-menu-btn:hover .menu-icon{
+    color: black;
+}
+#header .menu-icon,
 #header .search-icon {
     color: #fff;
     font-size: 20px;
@@ -419,3 +428,4 @@ html {
         opacity: 1;
     }
 }
+
