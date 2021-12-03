@@ -30,7 +30,7 @@
                     <a href="#contact">Contact</a>
                 </li>
                 <li>
-                    <a href="">More
+                    <a href="#">More
                         <i class="nav-arrow-down ti-arrow-circle-down"></i>
                     </a>
                     <ul class="subnav">
@@ -46,7 +46,7 @@
             <div class="search-btn">
                 <i class="search-icon ti-search"></i>
             </div>
-            <div class="mobile-menu-btn">
+            <div id="mobile-menu" class="mobile-menu-btn">
                 <i class="menu-icon ti-menu"></i>
             </div>
             <!-- END: Search button -->
@@ -235,6 +235,32 @@
         modalContainer.addEventListener('click',function(event){
             event.stopPropagation();
         })
+
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var headerHeight = header.clientHeight;
+
+        // Dong mo mobile menu
+
+        mobileMenu.onclick = function() {
+            var iClosed = header.clientHeight === headerHeight;
+            if (iClosed){
+                header.style.height = 'auto';
+            }else{
+                header.style.height = null;
+            }
+        }
+
+
+        // Tu dong dong mo mobile
+
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+            menuItem.onclick = function() {
+                header.style.height = null;
+            }
+        }
     </script>
 </body>
 </html>

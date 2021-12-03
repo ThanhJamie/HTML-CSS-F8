@@ -138,8 +138,10 @@ html {
 }
 
 #header .search-btn:hover {
+    cursor: pointer;
     background-color: orangered; 
 }
+
 #header .mobile-menu-btn,
 #header .search-btn {
     float: right;
