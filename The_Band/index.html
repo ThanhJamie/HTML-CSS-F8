@@ -261,9 +261,10 @@
             menuItem.onclick = function() {
                 var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
                 console.log(isParentMenu);
-                if (!isParentMenu){
+                if (isParentMenu){
+                    event.preventDefault();
+                }else{
                     header.style.height = null;
-
                 }
             }
         }
