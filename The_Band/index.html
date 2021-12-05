@@ -257,8 +257,14 @@
         var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
         for (var i = 0; i < menuItems.length; i++) {
             var menuItem = menuItems[i];
+            
             menuItem.onclick = function() {
-                header.style.height = null;
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                console.log(isParentMenu);
+                if (!isParentMenu){
+                    header.style.height = null;
+
+                }
             }
         }
     </script>
