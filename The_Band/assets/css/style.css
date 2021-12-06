@@ -46,6 +46,7 @@
     border: none;
     cursor: pointer;
     text-align: center;
+    -webkit-appearance: none;
 }
 .btn:hover{
     background-color: #ccc;
@@ -86,7 +87,7 @@ html {
     left: 0;
     right: 0;
     z-index: 1;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #nav > li {
@@ -175,7 +176,7 @@ html {
     position: relative;
     margin-top: 46px;
     padding-top: 50%;
-    background: url('/The_Band/assets/img/slider/slider1.jpg') top center / cover no-repeat;
+    background: url('../img/slider/slider1.jpg') top center / cover no-repeat;
 }
 #slider .text_content{
     position: absolute;
@@ -188,10 +189,12 @@ html {
 #slider .text_heading{
     font-weight: 500;
     font-size: 24px;
+    text-shadow: 0 1px 1px #000;
 }
 #slider .text_description{
     font-size:15px;
     padding-top: 25px;
+    text-shadow: 0 0 1px #000;
 }
 
 #content .content-section{
@@ -399,7 +402,13 @@ html {
     width: 30px;
     display: inline-block;
 }
-
+.contact-info a{
+    color:#101aef;
+    opacity: 0.8;
+}
+.contact-info a:hover{
+    opacity: 1;
+}
 .contact-form{
     font-size: 15px;
 }
