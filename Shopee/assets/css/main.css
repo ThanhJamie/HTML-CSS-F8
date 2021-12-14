@@ -8,9 +8,19 @@
 }
 .header__navbar-list{
     list-style: none;
-    /* display: inline-block; */
     padding-left: 0px;
 }
-.header__navbar-item{
+.header__navbar-item {
+    margin: 0 8px;
+}
+.header__navbar-item,
+.header__navbar-item-link{
     display: inline-block;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 300;
+}
+.header__navbar-item--strong{
+    font-weight: 450;
 }
