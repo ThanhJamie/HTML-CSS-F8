@@ -12,6 +12,7 @@
 }
 .header__navbar-item {
     margin: 0 8px;
+    position: relative;
 }
 .header__navbar-item,
 .header__navbar-item-link{
@@ -23,4 +24,15 @@
 }
 .header__navbar-item--strong{
     font-weight: 450;
+}
+
+.header__navbar-item--separate::after{
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 1px solid #fb9086;
+    height: 12px;
+    right : -9px;
+    top : 50%;
+    transform: translateY(-50%);
 }
