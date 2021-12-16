@@ -135,7 +135,25 @@
     animation: headerNotifyGrowth ease-in 0.2s;
     display: none;
 }
+.header__notify::before{
+    content: "";
+    border-width: 20px 26px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 24px;
+    top: -28px;
+}
 
+.header__notify::after{
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -16px;
+    width: 90%;
+    height: 20px;
+}
 @keyframes headerNotifyGrowth{
     from{
         transform: scale(0);
