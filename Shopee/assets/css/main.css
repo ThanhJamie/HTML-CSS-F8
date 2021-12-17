@@ -234,3 +234,89 @@
     padding: 8px 0;
     width: 100%;
 }
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+  }
+  
+  .modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal__body {
+    margin: auto;
+    background-color: var(--white-color);
+    position: relative;
+    z-index: 1;
+    border-radius: 5px;
+  }
+  
+  .auth-form{
+    width: 500px;
+  }
+  
+  .auth-form__container{
+    padding: 0 32px;
+  }
+  
+  .auth-form__header{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-top: 18px;
+  }
+  
+  .auth-form__heading{
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+  
+  .auth-form__switch-btn{
+    font-size:1.6rem;
+    color: var(--primary-color);
+    font-weight: 500 ;
+    cursor: pointer;
+  }
+  
+  .auth-form__input{
+    /* 100% Không được nên để 410px, qua responsive thì fix 100% */
+    width: 410px;
+    height: 40px;
+    margin-top: 16px;
+    padding: 0 12px;
+    font-size: 1.4rem;
+    border-radius: 2px;
+    border: 1px solid var(--border-color);
+    outline: none;
+  }
+  
+  .auth-form__input:focus{
+    border-color: #888;
+  }
+  
+  .auth-form__aside{
+    margin-top: 36px;
+  }
+  
+  .auth-form__policy-text{
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    text-align: center;
+    padding: 0 12px;
+  }
+  
+  .auth-form__text-link{
+    text-decoration: none;
+    color: var(--primary-color);
+  }
