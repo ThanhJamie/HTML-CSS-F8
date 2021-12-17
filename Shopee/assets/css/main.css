@@ -350,8 +350,32 @@
 .auth-form__socials-google{
     background-color: #ccc;
     color: var(--black-color);
+    color: #444;
 }
 
 .auth-form__socials-title{
     margin: 0 24px ;
+    font-weight: 400;
+}
+
+.auth-form__help{
+    display:flex;
+    justify-content: flex-end;
+}
+
+.auth-form__help-link{
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #999;
+}
+
+.auth-form__help-separate{
+    display: block;
+    border-left: 1px solid #eaeaea;
+    height:22px;
+    margin: -3px 16px 0;
+}
+
+.auth-form__help-fogot{
+    color: var(--primary-color);
 }
