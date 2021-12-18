@@ -267,7 +267,8 @@
 
 .auth-form__input {
   /* 100% Không được nên để 410px, qua responsive thì fix 100% */
-  width: 410px;
+  /* ĐÃ fix width */
+  width: 100%;
   height: 40px;
   margin-top: 16px;
   padding: 0 12px;
@@ -275,6 +276,7 @@
   border-radius: 2px;
   border: 1px solid var(--border-color);
   outline: none;
+  box-sizing: border-box;
 }
 
 .auth-form__input:focus {
@@ -384,6 +386,8 @@
   height: 40px;
   flex: 1;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
 }
 
 .header__cart{
@@ -395,4 +399,50 @@
   color:var(--white-color);
   font-size: 2.4rem;
   margin-top: 4px;
+}
+
+.header__search-input{
+  flex: 1;
+  height:100%;
+  border:none;
+  outline: none;
+  font-size:1.4rem;
+  color:var(--text-color);
+  padding: 0 16px;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.header__search-select{
+  height: 1.8rem;
+  border-left: 1px solid #ccc;
+  padding-left: 16px;
+}
+
+.header__search-select-label{
+  font-size:1.4rem;
+  color: var(--text-color);
+  position: relative;
+  top: 2px;
+}
+
+.header__search-select-icon{
+  font-size:1.4rem;
+  color: #4a4a4a;
+  margin: 0 16px;
+  position: relative;
+}
+
+.header__search-btn{
+  background-color: var(--primary-color);
+  border: none;
+  height:34px;
+  border-radius: 3px;
+  margin-right: 2px;
+  width: 60px;
+}
+
+.header__search-btn-icon{
+  font-size:1.6rem;
+  color: var(--white-color);
 }
