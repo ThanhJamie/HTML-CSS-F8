@@ -391,7 +391,7 @@
 }
 
 
-.header__cart:hover .header__cart-list{
+.header__cart-wrap:hover .header__cart-list{
   display: block;
 }
 
@@ -412,6 +412,7 @@
   box-shadow: 0px 2px 10px #ccc;
   display:none;
   animation: fadeIn ease-in 0.3s;
+  cursor:default;
 }
 
 .header__cart-list--no-cart {
@@ -441,6 +442,7 @@
   border-style: solid;
   border-color: transparent transparent #FFFFFF transparent;
   z-index: 1;
+  cursor: pointer;
 }
 
 .header__search-input-wrap {
