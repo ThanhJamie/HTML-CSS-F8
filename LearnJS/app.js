@@ -1,4 +1,8 @@
-var result = '3' + 2 + 1
+var a = "123"
+var b = "123"
 
-console.log(result) // ???
-console.log(result);
+if (typeof a,b === 'string'){
+    console.log(1)
+}else{
+    console.log(2);
+}
