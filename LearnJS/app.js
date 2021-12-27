@@ -1,5 +1,9 @@
-var a = new Number(2);
-var b = 32
+var languages = [1, 2, 3, 4];
 
-console.log(b.isNah);
-// Number.
+// languages.
+if(languages > 3 ){
+    languages.pop();
+}else{
+    languages.splice(-2,2)
+}
+console.log(languages);
