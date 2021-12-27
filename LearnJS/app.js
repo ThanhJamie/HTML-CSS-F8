@@ -1,8 +1,5 @@
-var a = "123"
-var b = "123"
+var a = new Number(2);
+var b = 32
 
-if (typeof a,b === 'string'){
-    console.log(1)
-}else{
-    console.log(2);
-}
+console.log(b.isNah);
+Number.
