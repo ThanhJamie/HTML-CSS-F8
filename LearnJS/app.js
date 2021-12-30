@@ -26,17 +26,24 @@
 // var b = "222"
 // b.includes
 
-function User(firstName, lastName, avatar) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.avatar = avatar;
-    this.getName = function() {
-        return `${this.firstName} ${this.lastName}`
-    }
-}
+// function User(firstName, lastName, avatar) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.avatar = avatar;
+//     this.getName = function() {
+//         return `${this.firstName} ${this.lastName}`
+//     }
+// }
 
-User.prototype.className = "User";
+// User.prototype.className = "User";
 
-var author = new User('Thanh','Dang','Avatar');
-author.email = 'Email@thanh.com';
-console.log(author);
+// var author = new User('Thanh','Dang','Avatar');
+// author.email = 'Email@thanh.com';
+// console.log(author);
+
+var date = new Date();
+var year = date.getFullYear();
+var month = date.getMonth() + 1;
+var day = date.getDate();
+
+// console.log(month);
