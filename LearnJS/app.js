@@ -47,3 +47,8 @@ var month = date.getMonth() + 1;
 var day = date.getDate();
 
 // console.log(month);
+function getCurrentTimestamp() {
+    var timestamp = Math.floor(Date.now() / 1000)
+    return timestamp
+}
+getCurrentTimestamp()
