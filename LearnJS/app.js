@@ -22,6 +22,16 @@
 
 // calculateTriangleArea(2, 8);
 
-var a = "123"
-var b = "222"
-b.includes
+// var a = "123"
+// var b = "222"
+// b.includes
+
+function User(firstName, lastName, avatar) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.avatar = avatar;
+}
+
+var author = new User('Thanh','Dang','Avatar');
+author.email = 'Email@thanh.com';
+console.log(author);
