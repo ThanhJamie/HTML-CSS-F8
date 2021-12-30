@@ -41,6 +41,8 @@
 // author.email = 'Email@thanh.com';
 // console.log(author);
 
+
+// 41
 // var date = new Date();
 // var year = date.getFullYear();
 // var month = date.getMonth() + 1;
