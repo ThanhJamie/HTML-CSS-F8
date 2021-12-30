@@ -41,14 +41,22 @@
 // author.email = 'Email@thanh.com';
 // console.log(author);
 
-var date = new Date();
-var year = date.getFullYear();
-var month = date.getMonth() + 1;
-var day = date.getDate();
+// var date = new Date();
+// var year = date.getFullYear();
+// var month = date.getMonth() + 1;
+// var day = date.getDate();
 
-// console.log(month);
-function getCurrentTimestamp() {
-    var timestamp = Math.floor(Date.now() / 1000)
-    return timestamp
-}
-getCurrentTimestamp()
+// // console.log(month);
+// function getCurrentTimestamp() {
+//     var timestamp = Math.floor(Date.now() / 1000)
+//     return timestamp
+// }
+// getCurrentTimestamp()
+
+
+// function getDifferentSeconds (a,b){
+//     var a=new Date(a);
+//     var b=new Date(b);
+//     var getDifferentSeconds=(b.getTime()- a.getTime()) /1000;
+//     return getDifferentSeconds ;
+//   }
