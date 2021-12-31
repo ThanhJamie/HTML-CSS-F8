@@ -62,3 +62,27 @@
 //     var getDifferentSeconds=(b.getTime()- a.getTime()) /1000;
 //     return getDifferentSeconds ;
 //   }
+
+//  42 
+
+// 42.1
+// function run(number) {
+//     if(number % 3 == 0 && number % 15 != 0 ){     
+//        return 'f';
+//     }
+//     if (number % 5 == 0 && number % 15 != 0){
+//        return 8;
+//     }
+//     if (number % 15 == 0 ){
+//         return 'f8';
+//     }
+    
+// }
+// 42.2
+// 43
+// 1.
+// function run(a) {
+//   return a === "number" ? a : parseInt(a);
+// }
+
+// 43
