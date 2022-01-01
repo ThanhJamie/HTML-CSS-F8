@@ -86,9 +86,52 @@
 // }
 
 // 43
-44
-45
-46
-47
-48
-483
+
+
+var topics = [
+    {
+        topic : 'Front-end',
+        courses : [
+            {
+                id : 1,
+                title : "HTML ,CSS"
+            },
+            {
+                id : 2,
+                title : "Javascript"
+            }
+        ]
+    },
+    {
+        topic : 'Back-end',
+        courses : [
+            {
+                id : 1,
+                title : "Php"
+            },
+            {
+                id : 2,
+                title : "Node-Js"
+            }
+        ]
+    }
+]
+
+var newCourse = topics.reduce(function (course,topic){
+    return course.concat(topic.courses)
+},[])
+
+
+// console.log(newCourse);
+
+
+var html = newCourse.map(function (course){
+    return `
+        <div>
+            <h2>${course.title}</h2>
+            <p>ID:${course.id}</p>
+        </div>
+    `
+})
+
+console.log(html.join(''));
