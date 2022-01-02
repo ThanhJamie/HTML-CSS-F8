@@ -88,50 +88,70 @@
 // 43
 
 
-var topics = [
-    {
-        topic : 'Front-end',
-        courses : [
-            {
-                id : 1,
-                title : "HTML ,CSS"
-            },
-            {
-                id : 2,
-                title : "Javascript"
-            }
-        ]
-    },
-    {
-        topic : 'Back-end',
-        courses : [
-            {
-                id : 1,
-                title : "Php"
-            },
-            {
-                id : 2,
-                title : "Node-Js"
-            }
-        ]
+// var topics = [
+//     {
+//         topic : 'Front-end',
+//         courses : [
+//             {
+//                 id : 1,
+//                 title : "HTML ,CSS"
+//             },
+//             {
+//                 id : 2,
+//                 title : "Javascript"
+//             }
+//         ]
+//     },
+//     {
+//         topic : 'Back-end',
+//         courses : [
+//             {
+//                 id : 1,
+//                 title : "Php"
+//             },
+//             {
+//                 id : 2,
+//                 title : "Node-Js"
+//             }
+//         ]
+//     }
+// ]
+
+// var newCourse = topics.reduce(function (course,topic){
+//     return course.concat(topic.courses)
+// },[])
+
+
+// // console.log(newCourse);
+
+
+// var html = newCourse.map(function (course){
+//     return `
+//         <div>
+//             <h2>${course.title}</h2>
+//             <p>ID:${course.id}</p>
+//         </div>
+//     `
+// })
+
+// console.log(html.join(''));
+
+
+Array.prototype.reduce2= function(callback,result) {
+    let i = 0
+    if(arguments.length < 2){
+        i = 1
+        result = this[0]
     }
-]
+    for(;i<this.length; i++){
+        result = callback(result,this[i],i,this);
+    }
+    return result
+}
+const numbers = [1,2,3,4,5]
 
-var newCourse = topics.reduce(function (course,topic){
-    return course.concat(topic.courses)
-},[])
+const result = numbers.reduce2((total,number) =>{
+    return total + number
+},10)
 
-
-// console.log(newCourse);
-
-
-var html = newCourse.map(function (course){
-    return `
-        <div>
-            <h2>${course.title}</h2>
-            <p>ID:${course.id}</p>
-        </div>
-    `
-})
-
-console.log(html.join(''));
+console.log(result);
