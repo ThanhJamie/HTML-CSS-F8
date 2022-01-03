@@ -167,7 +167,12 @@
 
 // console.log(heading.title);
 
-let f8LinkElement = document.querySelector('a:nth-child(1)')
-let f8ShortLink = f8LinkElement.getAttribute('href')
-document.querySelector('a:nth-child(2)').href = f8ShortLink;
-document.querySelector()
+// let f8LinkElement = document.querySelector('a:nth-child(1)')
+// let f8ShortLink = f8LinkElement.getAttribute('href')
+// document.querySelector('a:nth-child(2)').href = f8ShortLink;
+// document.querySelector()
+
+
+var boxElement = document.querySelector('.box')
+
+boxElement.innerHTML = '<h1>Javascript</h1>'
