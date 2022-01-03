@@ -173,6 +173,12 @@
 // document.querySelector()
 
 
-var boxElement = document.querySelector('.box')
+// var boxElement = document.querySelector('.box')
 
-boxElement.innerHTML = '<h1>Javascript</h1>'
+// boxElement.innerHTML = '<h1>Javascript</h1>'
+
+var boxElement = document.getElementById('box') 
+Object.assign(boxElement.style, { 
+    fontSize: '2rem', 
+    backgroundColor: '#F05123',
+})
