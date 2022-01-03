@@ -156,8 +156,18 @@
 
 // console.log(result);
 
-var headingNode = document.getElementById('heading');
+// var headingNode = document.getElementById('heading');
 
-console.log({ 
-    element: headingNode
-});
+// console.log({ 
+//     element: headingNode
+// });
+
+// var heading  =  document.querySelector('h1');
+// heading.title = 'Học lập trình tại F8'
+
+// console.log(heading.title);
+
+let f8LinkElement = document.querySelector('a:nth-child(1)')
+let f8ShortLink = f8LinkElement.getAttribute('href')
+document.querySelector('a:nth-child(2)').href = f8ShortLink;
+document.querySelector()
