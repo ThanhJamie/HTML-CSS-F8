@@ -177,8 +177,26 @@
 
 // boxElement.innerHTML = '<h1>Javascript</h1>'
 
-var boxElement = document.getElementById('box') 
-Object.assign(boxElement.style, { 
-    fontSize: '2rem', 
-    backgroundColor: '#F05123',
-})
+// var boxElement = document.querySelector('.box') 
+// Object.assign(boxElement.style, { 
+//     fontSize: '2rem', 
+//     backgroundColor: '#F05123',
+// })
+
+// var boxElement = document.querySelector('.box')
+
+// boxElement.classList.add('red')
+
+// console.log(boxElement.classList.contains('red'));
+
+// setTimeout(() => {
+//    boxElement.classList.remove('red') 
+// },3000);
+
+// boxElement.addEventListener('')
+
+var h1Element = document.querySelector('h1');
+
+h1Element.onclick = function () {
+    console.log(Math.random());
+}
