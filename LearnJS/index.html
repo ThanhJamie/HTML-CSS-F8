@@ -6,8 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .red{
-            color: red;
+        ul{
+            display:none;
+        }
+        input:focus ~ ul{
+            display:block
+        }
+        #btn{
+            background-color: aqua;
+            width: 30px;
+            height: 30px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -17,9 +31,31 @@
     <a>Học lập trình</a>
 
     <div>Lập trình Javascript</div> -->
-    <div class="box">
+    <!-- <div class="box">
         <h1>New Heading</h1>
-    </div>
+    </div> -->
+    <!-- <input type="text"> -->
+    <!-- <input type="checkbox">
+
+    <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select> -->
+    <!-- <div onclick=""></div> -->
+    <!-- 
+    <a href="https://f8.edu.vn" class="">Hoc lap trinh</a>
+    <a href="https://google.com" class="">Tim kiem</a> -->
+
+    <input placeholder="Tim kiem" type="text">
+    <ul>
+        <li>Javascript</li>
+        <li>PHP</li>
+        <li>Golang</li>
+    </ul>
+
+    <div id="btn">AA</div>
+
 </body>
 <script src="./app.js"></script>
 </html>

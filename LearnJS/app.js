@@ -195,8 +195,39 @@
 
 // boxElement.addEventListener('')
 
-var h1Element = document.querySelector('h1');
+// var h1Element = document.querySelector('h1');
 
-h1Element.onclick = function () {
-    console.log(Math.random());
+// h1Element.onclick = function () {
+//     console.log(Math.random());
+// }
+
+// var inputElement = document.querySelector('input[type="text"]');
+// // console.log(inputElement);
+// inputElement.onchange = function (e) {
+//     console.log(e.target.value);
+// }
+
+// var inputElement = document.querySelector('input[type="text"]');
+// inputElement.onkeyup = function (e) {
+//     console.log(e.target.value);
+// }
+
+var aElement = document.links
+
+// console.log(aElement);
+
+for(var i = 0; i < aElement.length; i++){
+    aElement[i].onclick = function(e) {
+        
+        if (!e.target.href.startsWith('https://f8.edu.vn')) {
+            e.preventDefault();
+        }
+    }
 }
+
+
+let btn = document.getElementById('btn');
+
+btn.addEventListener('click',function(e){
+    console.log(Math.random());
+})
