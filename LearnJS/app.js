@@ -221,10 +221,11 @@ for(var i = 0; i < aElement.length; i++){
         
         if (!e.target.href.startsWith('https://f8.edu.vn')) {
             e.preventDefault();
+            e.s
         }
     }
 }
-
+document.getElementById()
 
 let btn = document.getElementById('btn');
 
