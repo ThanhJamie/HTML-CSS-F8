@@ -232,3 +232,16 @@
 // btn.addEventListener('click',function(e){
 //     console.log(Math.random());
 // })
+
+
+// var json = '{"name": "Thanh"}, "age": 12';
+
+// console.log(json);
+
+// var a= '"asdsadsad"'
+
+// console.log(JSON.parse(a));
+
+console.log(JSON.stringify([
+    'javascript', 'js', 'css'
+]));
