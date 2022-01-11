@@ -212,23 +212,23 @@
 //     console.log(e.target.value);
 // }
 
-var aElement = document.links
+// var aElement = document.links
 
-// console.log(aElement);
+// // console.log(aElement);
 
-for(var i = 0; i < aElement.length; i++){
-    aElement[i].onclick = function(e) {
+// for(var i = 0; i < aElement.length; i++){
+//     aElement[i].onclick = function(e) {
         
-        if (!e.target.href.startsWith('https://f8.edu.vn')) {
-            e.preventDefault();
-            e.s
-        }
-    }
-}
-document.getElementById()
+//         if (!e.target.href.startsWith('https://f8.edu.vn')) {
+//             e.preventDefault();
+//             e.s
+//         }
+//     }
+// }
+// document.getElementById()
 
-let btn = document.getElementById('btn');
+// let btn = document.getElementById('btn');
 
-btn.addEventListener('click',function(e){
-    console.log(Math.random());
-})
+// btn.addEventListener('click',function(e){
+//     console.log(Math.random());
+// })
