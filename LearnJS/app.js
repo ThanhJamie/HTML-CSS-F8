@@ -242,6 +242,17 @@
 
 // console.log(JSON.parse(a));
 
-console.log(JSON.stringify([
-    'javascript', 'js', 'css'
-]));
+// console.log(JSON.stringify([
+//     'javascript', 'js', 'css'
+// ]));
+
+
+// Sync/Async
+// setTimeout, setInterval, fetch, XMLHttpRequest
+
+
+setTimeout(function () {
+    console.log(1);
+})
+
+console.log(2);
