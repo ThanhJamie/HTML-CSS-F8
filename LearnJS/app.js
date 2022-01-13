@@ -251,8 +251,33 @@
 // setTimeout, setInterval, fetch, XMLHttpRequest
 
 
-setTimeout(function () {
-    console.log(1);
-})
+// setTimeout(function () {
+//     console.log(1);
+// })
 
-console.log(2);
+// console.log(2);
+
+// var promise = new Promise(
+//     function (resolve, reject) {
+
+//         resolve()
+// })
+
+
+// promise
+//     .then(function (){
+//         console.log('Succesfully');
+//     })
+//     .catch(function () {
+//         console.log('Failure');
+//     })
+//     .finally(function (){
+//         console.log('Done');
+//     })
+
+
+function sleep(ms){
+    return new Promise(function (resolve, reject) {
+        
+    })
+}
