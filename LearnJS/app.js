@@ -276,8 +276,18 @@
 //     })
 
 
-function sleep(ms){
-    return new Promise(function (resolve, reject) {
-        shdsifiadsoifndsalknfoisadnkf dsoainfds ioafoi
+// function sleep(ms){
+//     return new Promise(function (resolve, reject) {
+       
+//     })
+// }
+
+var courseAPI = 'http://localhost:3000/courses'
+
+fetch(courseAPI)
+    .then(function (response) {
+        return response.json()
     })
-}
+    .then(function (course) {
+        console.log(course);
+    })

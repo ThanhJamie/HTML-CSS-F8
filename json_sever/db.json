@@ -1,0 +1,15 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "name":"Kiến thức cơ bản, tổng quan cho người mới bắt đầu",
+            "description": "Kiến thức cơ bản, tổng quan cho người mới bắt đầu"
+        },
+        {
+            "id": 2,
+            "name":"Kiến thức cơ bản, tổng quan cho người mới bắt đầu",
+            "description": "Kiến thức cơ bản, tổng quan cho người mới bắt đầu"
+        }
+    ]
+}
+  
