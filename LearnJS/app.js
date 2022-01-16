@@ -334,4 +334,7 @@
 // console.log(phpCourse);
 
 
-var array = ['Javascript', 'PHP', 'RUBY']
+var array = ['Javascript', 'PHP', 'RUBY'];
+
+var [a,b,c] = array
+console.log(a,b,c);
