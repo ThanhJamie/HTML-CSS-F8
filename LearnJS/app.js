@@ -291,3 +291,47 @@
 //     .then(function (course) {
 //         console.log(course);
 //     })
+
+// const courseName =  'Javascript'
+// const courseName2 =  'PHP'
+// const description = `Course name: ${courseName} ${courseName2}`
+
+// console.log(description);
+
+// const logger = (log) => {
+//     console.log(log);
+// }
+
+
+// logger('logging')
+
+
+// const logger = (log) => console.log(log);
+
+// logger('123')
+
+
+// const course = {
+//     name: 'Course',
+//     getName: function (){
+//         return this
+//     }
+// }
+
+// console.log(course.getName());
+
+// class Course {
+//     constructor(name, price) {
+//         this.name = name;
+//         this.price = price;
+//     }
+// }
+
+// const phpCourse = new Course('PHP', 1000)
+// const jvsCourse = new Course('Javascript', 2000)
+
+// console.log(jvsCourse);
+// console.log(phpCourse);
+
+
+var array = ['Javascript', 'PHP', 'RUBY']
