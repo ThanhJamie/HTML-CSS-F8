@@ -76,7 +76,7 @@
 //     if (number % 15 == 0 ){
 //         return 'f8';
 //     }
-    
+
 // }
 // 42.2
 // 43
@@ -218,7 +218,7 @@
 
 // for(var i = 0; i < aElement.length; i++){
 //     aElement[i].onclick = function(e) {
-        
+
 //         if (!e.target.href.startsWith('https://f8.edu.vn')) {
 //             e.preventDefault();
 //             e.s
@@ -278,7 +278,7 @@
 
 // function sleep(ms){
 //     return new Promise(function (resolve, reject) {
-       
+
 //     })
 // }
 
@@ -338,3 +338,7 @@
 
 // var [a,b,c] = array
 // console.log(a,b,c);
+
+import logger from './logger.js';
+
+console.log(typeof logger);
