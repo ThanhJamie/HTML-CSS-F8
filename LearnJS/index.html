@@ -1,61 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- <style>
-        ul{
-            display:none;
-        }
-        input:focus ~ ul{
-            display:block
-        }
-        #btn{
-            background-color: aqua;
-            width: 30px;
-            height: 30px;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            border: 1px solid #ccc;
-            margin-top: 10px;
-            border-radius: 4px;
-        }
-    </style> -->
-</head>
-<body>
-    <!-- <a href="https://f8.edu.vn/">Học lập trình</a>
+    <link rel="stylesheet" href="css.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div>
+      <!-- Tabs item -->
+      <div class="tabs">
+        <div class="tab-item active">
+          <i class="tab-icon fas fa-code"></i>
+          React
+        </div>
+        <div class="tab-item">
+          <i class="tab-icon fas fa-cog"></i>
+          Angular
+        </div>
+        <div class="tab-item">
+          <i class="tab-icon fas fa-plus-circle"></i>
+          Ember
+        </div>
+        <div class="tab-item">
+          <i class="tab-icon fas fa-pen-nib"></i>
+          Vue.JS
+        </div>
+        <div class="line"></div>
+      </div>
+      <!-- Tab content -->
+      <div class="tab-content">
+        <div class="tab-pane active">
+          <h2>React</h2>
+          <p>
+            React makes it painless to create interactive UIs. Design simple
+            views for each state in your application, and React will efficiently
+            update and render just the right components when your data changes.
+          </p>
+        </div>
+        <div class="tab-pane">
+          <h2>Angular</h2>
+          <p>
+            Angular is an application design framework and development platform
+            for creating efficient and sophisticated single-page apps.
+          </p>
+        </div>
+        <div class="tab-pane">
+          <h2>Ember</h2>
+          <p>
+            Ember.js is a productive, battle-tested JavaScript framework for
+            building modern web applications. It includes everything you need to
+            build rich UIs that work on any device.
+          </p>
+        </div>
+        <div class="tab-pane">
+          <h2>Vue.js</h2>
+          <p>
+            Vue (pronounced /vjuː/, like view) is a progressive framework for
+            building user interfaces. Unlike other monolithic frameworks, Vue is
+            designed from the ground up to be incrementally adoptable.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const $ = document.querySelector.bind(document);
+      const $$ = document.querySelectorAll.bind(document);
 
-    <a>Học lập trình</a>
+      const tabs = $$(".tab-item");
+      const panes = $$(".tab-pane");
 
-    <div>Lập trình Javascript</div> -->
-    <!-- <div class="box">
-        <h1>New Heading</h1>
-    </div> -->
-    <!-- <input type="text"> -->
-    <!-- <input type="checkbox">
-
-    <select>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-    </select> -->
-    <!-- <div onclick=""></div> -->
-    <!-- 
-    <a href="https://f8.edu.vn" class="">Hoc lap trinh</a>
-    <a href="https://google.com" class="">Tim kiem</a> -->
-
-    <input placeholder="Tim kiem" type="text">
-    <ul>
-        <li>Javascript</li>
-        <li>PHP</li>
-        <li>Golang</li>
-    </ul>
-
-    <div id="btn">AA</div>
-
-</body>
-<script type="module" src="./app.js"></script>
+      tabs.forEach((tab, index) => {
+        tab.onclick = function () {
+          console.log(this);
+        };
+      });
+    </script>
+  </body>
 </html>
