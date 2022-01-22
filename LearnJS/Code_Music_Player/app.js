@@ -1,6 +1,8 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
+const PLAYER_STORAGE_KEY = 'Thanh_Player'
+
 const player = $('.player')
 const heading = $('header h2')
 const cdThumb = $('.cd-thumb')
@@ -12,12 +14,15 @@ const nextBtn = $('.btn-next')
 const prevBtn = $('.btn-prev')
 const randomBtn = $('.btn-random')
 const repeatBtn = $('.btn-repeat')
+const playList = $('.playlist')
+
 
 const app = {
     currentIndex: 0,
     isPlaying: false,
     isRandom: false,
     isRepeat: false,
+    config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY))||{},
     songs: [
         {
             name: "Bước Qua Nhau",
@@ -80,10 +85,14 @@ const app = {
             image: "https://avatar-nct.nixcdn.com/song/2021/07/16/f/4/9/8/1626425507034.jpg"
         },
     ],
+    setConfig: function(key, value) {
+        this.config[key] = value;
+        localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config));
+    },
     render: function () {
         const htmls = this.songs.map((song,index) => {
             return `
-            <div class="song ${index === this.currentIndex  ? 'active' :''}">
+            <div class="song ${index === this.currentIndex  ? 'active' :''}"data-index="${index}">
                 <div
                     class="thumb" 
                     style=" background-image: url('${song.image}')";"
@@ -178,6 +187,7 @@ const app = {
             }
             audio.play()
             _this.render()
+            _this.scrollToActiveSong()
         }
         
         // Khi prev bai
@@ -189,16 +199,19 @@ const app = {
             }
             audio.play()
             _this.render()
+            _this.scrollToActiveSong()
         }
 
         // Random
         randomBtn.onclick = (e) =>{
             _this.isRandom = !_this.isRandom
+            _this.setConfig('isRandom', _this.isRandom)
             randomBtn.classList.toggle('active', _this.isRandom)
         }
 
         repeatBtn.onclick = (e) =>{
             _this.isRepeat = !_this.isRepeat
+            _this.setConfig('isRepeat', _this.isRepeat)
             repeatBtn.classList.toggle('active', _this.isRepeat)
         }
 
@@ -211,14 +224,43 @@ const app = {
             }
 
         }
-    },
 
+        playList.onclick = (e) =>{
+            const songNode = e.target.closest('.song:not(.active)')
+            if (songNode || e.target.closest('.option')) {
+                // Xu li click vao song
+                if(songNode){
+                    _this.currentIndex = Number(songNode.dataset.index)
+                    _this.loadCurrentSong()
+                    _this.render()
+                    audio.play()
+                }
+
+                // Xu li option
+                if( e.target.closest('.option')){
+
+                }
+            }
+        }
+    },
+    scrollToActiveSong: function () {
+        setTimeout(() =>{
+            $('.song.active').scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+            })
+        },500)
+    },
     loadCurrentSong: function () {
         
         heading.textContent = this.currentSong.name
         cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`
         audio.src = this.currentSong.path
 
+    },
+    loadConfig: function () {
+        this.isRandom = this.config.isRandom
+        this.isRepeat = this.config.isRepeat
     },
     nextSong: function () {
         this.currentIndex++
@@ -244,14 +286,19 @@ const app = {
     },
 
     start: function () {
+        this.loadConfig()
         //Define properties
         this.defineProperties()
         // Listen Event
         this.handleEvents()
-        // Render playlist
-        this.render();
         // Load song
         this.loadCurrentSong();
+        // Render playlist
+        this.render();
+
+        randomBtn.classList.toggle('active', this.isRandom)
+        repeatBtn.classList.toggle('active', this.isRepeat)
+        
     }
 
 }
