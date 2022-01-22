@@ -10,54 +10,72 @@ const playBtn = $('.btn-toggle-play')
 const progress = $('#progress')
 const nextBtn = $('.btn-next')
 const prevBtn = $('.btn-prev')
-
+const randomBtn = $('.btn-random')
 
 const app = {
     currentIndex: 0,
     isPlaying: false,
-
+    isRandom: false,
     songs: [
         {
-            name: "Bởi vì yêu",
-            singer: "JukySan",
-            path: "../Code_Music_Player/song/BoiViYeu-JukySan-7120987.mp3",
-            image: "https://i.ytimg.com/vi/jTLhQf5KJSc/maxresdefault.jpg"
+            name: "Bước Qua Nhau",
+            singer: "Vũ",
+            path: "https://c1-ex-swe.nixcdn.com/NhacCuaTui1024/BuocQuaNhau-Vu-7120388.mp3?st=I9W59X1Odyi9QRGTehWfHg&e=1638708688",
+            image: "https://avatar-nct.nixcdn.com/song/2021/11/19/6/d/9/1/1637317177185.jpg"
         },
         {
-            name: "Chống lại thế giới",
-            singer: "Raftaar x Salim Merchant x Karma",
-            path: "../Code_Music_Player/song/ChongLaiTheGioi-NgoKienHuy-7120548.mp3",
-            image:
-                "https://1.bp.blogspot.com/-kX21dGUuTdM/X85ij1SBeEI/AAAAAAAAKK4/feboCtDKkls19cZw3glZWRdJ6J8alCm-gCNcBGAsYHQ/s16000/Tu%2BAana%2BPhir%2BSe%2BRap%2BSong%2BLyrics%2BBy%2BRaftaar.jpg"
+            name: "Ái Nộ",
+            singer: "Masew, Khôi Vũ",
+            path: "https://c1-ex-swe.nixcdn.com/NhacCuaTui1021/AiNo1-MasewKhoiVu-7078913.mp3?st=ngcoKLRyRorVu8KqUeS1wg&e=1638762705",
+            image: "https://avatar-nct.nixcdn.com/song/2021/08/30/2/1/a/e/1630316309035.jpg"
         },
         {
-            name: "Em da co nguoi mới",
-            singer: "Raftaar x Brobha V",
-            path:
-                "../Code_Music_Player/song/EmDaCoNguoiMoi-TocTienNguoicu-7122784.mp3",
-            image: "https://i.ytimg.com/vi/QvswgfLDuPg/maxresdefault.jpg"
+            name: "Muộn Rồi Mà Sao Còn",
+            singer: "Sơn Tùng M-TP",
+            path: "https://c1-ex-swe.nixcdn.com/Believe_Audio19/MuonRoiMaSaoCon-SonTungMTP-7011803.mp3?st=tD-Ln6qGqkdH659AeuHsjQ&e=1638782546",
+            image: "https://avatar-nct.nixcdn.com/song/2021/04/29/9/1/f/8/1619691182261.jpg"
         },
         {
-            name: "Gap may",
-            singer: "Raftaar x Nawazuddin Siddiqui",
-            path: "../Code_Music_Player/song/GapMay-WrenEvans-7127718.mp3",
-            image:
-                "https://a10.gaanacdn.com/images/song/39/24225939/crop_480x480_1536749130.jpg"
+            name: "Thức Giấc",
+            singer: "Da LAB",
+            path: "https://c1-ex-swe.nixcdn.com/NhacCuaTui1018/ThucGiac-DaLAB-7048212.mp3?st=1LcQhTisk8WrOQuzK4p86Q&e=1638782708",
+            image: "https://avatar-nct.nixcdn.com/song/2021/07/14/8/c/f/9/1626231010810.jpg"
         },
         {
-            name: "Nhat ban roi",
-            singer: "Raftaar",
-            path: "../Code_Music_Player/song/NhatBanRoi-HuyenSambi-7123548.mp3",
-            image:
-                "https://a10.gaanacdn.com/images/albums/72/3019572/crop_480x480_3019572.jpg"
+            name: "Độ Tộc 2",
+            singer: "Masew, Độ Mixi, Phúc Du, Pháo",
+            path: "https://c1-ex-swe.nixcdn.com/NhacCuaTui1020/DoToc2-MasewDoMixiPhucDuPhao-7064730.mp3?st=ehahZN3-iX9xYdBFgDgGcg&e=1638782785",
+            image: "https://avatar-nct.nixcdn.com/song/2021/08/10/b/2/e/0/1628579601228.jpg"
         },
         {
-            name: "Damn",
-            singer: "Raftaar x kr$na",
-            path:
-                "../Code_Music_Player/song/YeuKhongCanEp-BaoAnh-7122895.mp3",
-            image:
-                "https://a10.gaanacdn.com/images/albums/72/3019572/crop_480x480_3019572.jpg"
+            name: "Chúng Ta Sau Này",
+            singer: "T.R.I",
+            path: "https://c1-ex-swe.nixcdn.com/NhacCuaTui1010/ChungTaSauNay-TRI-6929586.mp3?st=l56Wr1fLE9fMnFehhpo5xg&e=1638782875",
+            image: "https://avatar-nct.nixcdn.com/song/2021/01/27/5/2/2/b/1611738358661.jpg"
+        },
+        {
+            name: "Dịu Dàng Em Đến",
+            singer: "ERIK, NinjaZ",
+            path: "https://c1-ex-swe.nixcdn.com/NhacCuaTui1021/DiuDangEmDen-ERIKNinjaZ-7078877.mp3?st=QmjyqbnGv3jClPKm4oA1YQ&e=1638782938",
+            image: "https://avatar-nct.nixcdn.com/song/2021/08/30/2/1/a/e/1630307726211.jpg"
+        },
+        {
+            name: "Hương",
+            singer: "Văn Mai Hương, Negav",
+            path: "https://c1-ex-swe.nixcdn.com/NhacCuaTui1010/Huong-VanMaiHuongNegav-6927340.mp3?st=PvHOWlRnF6TymvggYGding&e=1638783027",
+            image: "https://avatar-nct.nixcdn.com/song/2021/01/22/9/f/2/1/1611280898757.jpg"
+        },
+        {
+            name: "Miên Man",
+            singer: "DUTZUX",
+            path: "https://c1-ex-swe.nixcdn.com/NhacCuaTui1024/MienMan-DUTZUX-7120884.mp3?st=yTOFq5aH8FGEvbm-_n_KTA&e=1638783090",
+            image: "https://avatar-nct.nixcdn.com/song/2021/11/19/6/d/9/1/1637320885751.jpg"
+        },
+        {
+            name: "có hẹn với thanh xuân",
+            singer: "MONSTAR",
+            path: "https://c1-ex-swe.nixcdn.com/NhacCuaTui1020/cohenvoithanhxuan-MONSTAR-7050201.mp3?st=PjrrnZ2dZ3ffA6R7dRrppQ&e=1638783161",
+            image: "https://avatar-nct.nixcdn.com/song/2021/07/16/f/4/9/8/1626425507034.jpg"
         },
     ],
     render: function () {
@@ -93,11 +111,13 @@ const app = {
         const cdWidth = cd.offsetWidth
 
         // Xu li CD quay va dung
-        const cdThumbAnimate =  cdThumb.animate([
-            { transform: 'rotate(360deg)'}
-        ],{
+        const cdThumbAnimate = cd.animate([
+            {
+                transform: "rotate(360deg)"
+            }
+        ], {
             duration: 10000,
-            iteration: Infinity
+            iterations: Infinity
         })
         cdThumbAnimate.pause()
 
@@ -149,16 +169,39 @@ const app = {
 
         // Khi next bai
         nextBtn.onclick = () =>{
-            _this.nextSong()
+            if (_this.isRandom) {
+                _this.playRandomSong()
+            }else{
+                _this.nextSong()
+            }
             audio.play()
         }
         
         // Khi prev bai
         prevBtn.onclick = () =>{
-            _this.prevSong()
+            if (_this.isRandom) {
+                _this.playRandomSong()
+            }else{
+                _this.prevSong()
+            }
             audio.play()
         }
 
+        // Random
+        randomBtn.onclick = (e) =>{
+            _this.isRandom = !_this.isRandom
+            randomBtn.classList.toggle('active', _this.isRandom)
+        }
+
+        // Xu li next song khi audio ended
+        audio.onended = () =>{
+            if (_this.isRandom) {
+                _this.playRandomSong()
+            }else{
+                _this.nextSong()
+            }
+            audio.play()    
+        }
     },
 
     loadCurrentSong: function () {
@@ -182,6 +225,15 @@ const app = {
         }
         this.loadCurrentSong()
     },
+    playRandomSong: function () {
+        let newIndex
+        do {
+            newIndex = Math.floor(Math.random() * this.songs.length)
+        } while (newIndex === this.currentIndex);
+        this.currentIndex = newIndex
+        this.loadCurrentSong()
+    },
+
     start: function () {
         //Define properties
         this.defineProperties()
