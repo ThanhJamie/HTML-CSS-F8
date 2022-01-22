@@ -11,11 +11,13 @@ const progress = $('#progress')
 const nextBtn = $('.btn-next')
 const prevBtn = $('.btn-prev')
 const randomBtn = $('.btn-random')
+const repeatBtn = $('.btn-repeat')
 
 const app = {
     currentIndex: 0,
     isPlaying: false,
     isRandom: false,
+    isRepeat: false,
     songs: [
         {
             name: "Bước Qua Nhau",
@@ -79,9 +81,9 @@ const app = {
         },
     ],
     render: function () {
-        const htmls = this.songs.map(song => {
+        const htmls = this.songs.map((song,index) => {
             return `
-            <div class="song">
+            <div class="song ${index === this.currentIndex  ? 'active' :''}">
                 <div
                     class="thumb" 
                     style=" background-image: url('${song.image}')";"
@@ -175,6 +177,7 @@ const app = {
                 _this.nextSong()
             }
             audio.play()
+            _this.render()
         }
         
         // Khi prev bai
@@ -185,6 +188,7 @@ const app = {
                 _this.prevSong()
             }
             audio.play()
+            _this.render()
         }
 
         // Random
@@ -193,14 +197,19 @@ const app = {
             randomBtn.classList.toggle('active', _this.isRandom)
         }
 
+        repeatBtn.onclick = (e) =>{
+            _this.isRepeat = !_this.isRepeat
+            repeatBtn.classList.toggle('active', _this.isRepeat)
+        }
+
         // Xu li next song khi audio ended
         audio.onended = () =>{
-            if (_this.isRandom) {
-                _this.playRandomSong()
+            if(_this.isRepeat){
+                audio.play()
             }else{
-                _this.nextSong()
+                nextBtn.click()
             }
-            audio.play()    
+
         }
     },
 
