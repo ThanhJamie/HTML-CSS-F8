@@ -22,7 +22,7 @@ const app = {
     isPlaying: false,
     isRandom: false,
     isRepeat: false,
-    config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY))||{},
+    config: JSON.parse(localStorage.getItem(PLAYER_STORAGE_KEY)) || {},
     songs: [
         {
             name: "Bước Qua Nhau",
@@ -85,14 +85,14 @@ const app = {
             image: "https://avatar-nct.nixcdn.com/song/2021/07/16/f/4/9/8/1626425507034.jpg"
         },
     ],
-    setConfig: function(key, value) {
+    setConfig: function (key, value) {
         this.config[key] = value;
         localStorage.setItem(PLAYER_STORAGE_KEY, JSON.stringify(this.config));
     },
     render: function () {
-        const htmls = this.songs.map((song,index) => {
+        const htmls = this.songs.map((song, index) => {
             return `
-            <div class="song ${index === this.currentIndex  ? 'active' :''}"data-index="${index}">
+            <div class="song ${index === this.currentIndex ? 'active' : ''}"data-index="${index}">
                 <div
                     class="thumb" 
                     style=" background-image: url('${song.image}')";"
@@ -117,7 +117,7 @@ const app = {
         })
     },
 
-    handleEvents: function (){
+    handleEvents: function () {
         const _this = this
         const cdWidth = cd.offsetWidth
 
@@ -142,7 +142,7 @@ const app = {
 
         // Xử lý khi click play
 
-        playBtn.onclick = () =>{
+        playBtn.onclick = () => {
             if (_this.isPlaying) {
                 audio.pause();
             } else {
@@ -151,13 +151,13 @@ const app = {
         }
 
         // Khi Song dc play
-        audio.onplay = () =>{
+        audio.onplay = () => {
             _this.isPlaying = true;
             player.classList.add('playing')
             cdThumbAnimate.play()
         }
         // Khi Song dc pause
-        audio.onpause = () =>{
+        audio.onpause = () => {
             _this.isPlaying = false;
             player.classList.remove('playing')
             cdThumbAnimate.pause()
@@ -165,36 +165,36 @@ const app = {
         }
 
         // Khi tien do bai hat thay doi
-        audio.ontimeupdate = () =>{
-            if(audio.duration){
+        audio.ontimeupdate = () => {
+            if (audio.duration) {
                 const progressPercent = Math.floor(audio.currentTime / audio.duration * 100)
                 progress.value = progressPercent
             }
         }
 
         // Xu li khi tua soong
-        progress.onchange = (e) =>{
-            const seekTime = audio.duration/100 * e.target.value
+        progress.onchange = (e) => {
+            const seekTime = audio.duration / 100 * e.target.value
             audio.currentTime = seekTime
         }
 
         // Khi next bai
-        nextBtn.onclick = () =>{
+        nextBtn.onclick = () => {
             if (_this.isRandom) {
                 _this.playRandomSong()
-            }else{
+            } else {
                 _this.nextSong()
             }
             audio.play()
             _this.render()
             _this.scrollToActiveSong()
         }
-        
+
         // Khi prev bai
-        prevBtn.onclick = () =>{
+        prevBtn.onclick = () => {
             if (_this.isRandom) {
                 _this.playRandomSong()
-            }else{
+            } else {
                 _this.prevSong()
             }
             audio.play()
@@ -203,56 +203,55 @@ const app = {
         }
 
         // Random
-        randomBtn.onclick = (e) =>{
+        randomBtn.onclick = (e) => {
             _this.isRandom = !_this.isRandom
             _this.setConfig('isRandom', _this.isRandom)
             randomBtn.classList.toggle('active', _this.isRandom)
         }
 
-        repeatBtn.onclick = (e) =>{
+        repeatBtn.onclick = (e) => {
             _this.isRepeat = !_this.isRepeat
             _this.setConfig('isRepeat', _this.isRepeat)
             repeatBtn.classList.toggle('active', _this.isRepeat)
         }
 
         // Xu li next song khi audio ended
-        audio.onended = () =>{
-            if(_this.isRepeat){
+        audio.onended = () => {
+            if (_this.isRepeat) {
                 audio.play()
-            }else{
+            } else {
                 nextBtn.click()
             }
 
         }
 
-        playList.onclick = (e) =>{
+        playList.onclick = (e) => {
             const songNode = e.target.closest('.song:not(.active)')
             if (songNode || e.target.closest('.option')) {
                 // Xu li click vao song
-                if(songNode){
+                if (songNode) {
                     _this.currentIndex = Number(songNode.dataset.index)
                     _this.loadCurrentSong()
                     _this.render()
                     audio.play()
                 }
-
                 // Xu li option
-                if( e.target.closest('.option')){
+                if (e.target.closest('.option')) {
 
                 }
             }
         }
     },
     scrollToActiveSong: function () {
-        setTimeout(() =>{
+        setTimeout(() => {
             $('.song.active').scrollIntoView({
                 behavior: 'smooth',
                 block: 'nearest',
             })
-        },500)
+        }, 500)
     },
     loadCurrentSong: function () {
-        
+
         heading.textContent = this.currentSong.name
         cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`
         audio.src = this.currentSong.path
@@ -271,8 +270,8 @@ const app = {
     },
     prevSong: function () {
         this.currentIndex--
-        if (this.currentIndex <0) {
-            this.currentIndex = this.songs.length -1
+        if (this.currentIndex < 0) {
+            this.currentIndex = this.songs.length - 1
         }
         this.loadCurrentSong()
     },
@@ -298,10 +297,11 @@ const app = {
 
         randomBtn.classList.toggle('active', this.isRandom)
         repeatBtn.classList.toggle('active', this.isRepeat)
-        
+
     }
 
 }
 
 
 app.start()
+
