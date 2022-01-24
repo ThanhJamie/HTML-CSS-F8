@@ -49,6 +49,7 @@
 <script>
     Validator({
         form: "#form-1",
+        formGroupSeletor : '.form-group',
         errorSelector: '.form-message',
         rules: [
             Validator.isRequired('#fullname'),
@@ -57,7 +58,7 @@
             Validator.isRequired('#password_confirmation'),
             Validator.isConfirm('#password_confirmation', () => {
                 return document.querySelector('#form-1 #password').value
-            }, 'Mat khau nhap lai khong chinh xac'),
+            }, 'Mật khẩu nhập lại không chính xác'),
         ],
         onSubmit: function (data) {
             console.log(data);

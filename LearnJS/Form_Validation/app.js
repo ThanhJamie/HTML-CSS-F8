@@ -3,8 +3,17 @@ function Validator(options) {
 
     var selectorRule = {}
 
+    function getParent(element,selector) {
+        while (element.parentElement){
+            if(element.parentElement.matches(selector)){
+                return element.parentElement
+            }
+            element = element.parentElement
+        }
+    }
+
     function Validate(inputElement, rule) {
-        var errorElement = inputElement.parentElement.querySelector(options.errorSelector);
+        var errorElement = getParent(inputElement,options.formGroupSeletor).querySelector(options.errorSelector);
         var errorMassage = rule.test(inputElement.value);
 
         var rules = selectorRule[rule.selector]
@@ -45,10 +54,11 @@ function Validator(options) {
                 if (typeof options.onSubmit === 'function') {
                     let enableInputs = formElement.querySelectorAll('[name]');
                     var formValues = Array.from(enableInputs).reduce(function (values, input) {
-                        return (values[input.name] = input.value) && values;
+                        values[input.name] = input.value
+                        return values;
                     }, {})
                     options.onSubmit(formValues)
-                }else{
+                } else {
                     formElement.submit();
                 }
             }
@@ -85,7 +95,7 @@ Validator.isRequired = function (selector) {
     return {
         selector: selector,
         test: function (value) {
-            return value.trim() ? undefined : 'Vui long nhap lai'
+            return value.trim() ? undefined : 'Vui lòng nhập lại'
         }
     }
 }
@@ -95,7 +105,7 @@ Validator.isEmail = function (selector) {
         selector: selector,
         test: function (value) {
             var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-            return regex.test(value) ? undefined : 'Truong nay phai la email'
+            return regex.test(value) ? undefined : 'Trường này không phải là email'
         }
     }
 }
@@ -104,7 +114,7 @@ Validator.minLength = function (selector, minLength) {
     return {
         selector: selector,
         test: function (value) {
-            return value.length >= minLength ? undefined : `Vui long nhap toi thieu ${minLength} ki tu`
+            return value.length >= minLength ? undefined : `Vui lòng nhập tối thiểu ${minLength} kí tự`
         }
     }
 }
@@ -113,7 +123,7 @@ Validator.isConfirm = function (selector, getConfirmValue, message) {
     return {
         selector: selector,
         test: function (value) {
-            return value === getConfirmValue() ? undefined : message || 'Gia tri nhap vao khong chinh xac'
+            return value === getConfirmValue() ? undefined : message || 'Giá trị nhập vào không chính xác'
         }
     }
 }
