@@ -44,6 +44,7 @@ function App() {
 					{course.name}
 				</div>
 			))}
+			
 			<button onClick={handleSubmit}>SUBMIT</button>
 		</div>
 	);
