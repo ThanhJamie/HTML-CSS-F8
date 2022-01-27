@@ -6,16 +6,48 @@ import { useState } from "react";
 // 	'RGB Keyboard',
 // ]
 
+const courses = [
+    {
+        id: 1,
+        name: "Hoc HTML,CSS",
+    },
+    {
+        id: 2,
+        name: "Hoc JavaScript cơ bản",
+    },
+    {
+        id: 3,
+        name: "Hoc JavaScript cơ bản",
+    },
+    {
+        id: 4,
+        name: "Hoc React",
+    },
+];
+
 function App() {
     const [name, setName] = useState("");
-    console.log(name);
+    const [email, setEmail] = useState("");
+
+    const handleSubmit = () => {
+        console.log({
+            name,
+            email,
+        });
+    };
+
+    // console.log(name);
     return (
-        <div style={{ padding: 20 }}>
+        <div style={{ padding: 32 }}>
             <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
             ></input>
-            <button onClick={() => setName("Dang Chi Thanh")}>Change</button>
+            <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+            ></input>
+            <button onClick={handleSubmit}>SUBMIT</button>
         </div>
     );
 }
