@@ -2,24 +2,19 @@ import { useEffect, useState } from "react";
 
 
 function Content() {
-    const [width, setWidth] = useState(window.innerWidth)
-    
-    useEffect(() => {
-        
-        const handleResize = () => {
-            setWidth(window.innerWidth);
-        }
-        
-        window.addEventListener('resize',handleResize)
+    const [countDown, setcountDown] = useState(180)
 
-        return () => {
-            window.removeEventListener('resize',handleResize)
-        }
-    },[])
+    useEffect(() => {
+        const timerId = setInterval(() => {
+            setcountDown(prevState => prevState - 1);
+        }, 1000)
+
+        return () => clearInterval(timerId)
+    }, [])
 
     return (
         <div>
-            <h1>{width}</h1>
+            <h1>{countDown}</h1>
         </div>
     );
 }
