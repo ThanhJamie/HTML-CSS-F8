@@ -1,0 +1,19 @@
+{
+    "name": "learnexpressjs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ThanhJamie/LearnExpressJS.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ThanhJamie/LearnExpressJS/issues"
+    },
+    "homepage": "https://github.com/ThanhJamie/LearnExpressJS#readme"
+}
